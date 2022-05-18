@@ -12,7 +12,14 @@
 
 Options and Market Making presentation material.
 
-1. Pricing = averaging ?
+1. Intuition of pricing
+2. No Model Pricing
+3. Binomial Model
+4. Continuous Model
+5. Replication
+
+
+
 2. Pricing = replication
 3. Modèle binomial 1-step
     * https://h1ros.github.io/posts/introduction-to-graphviz-in-jupyter-notebook/

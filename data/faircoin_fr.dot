@@ -1,0 +1,11 @@
+digraph G {
+  
+  rankdir=LR;
+
+  Lancer;
+  Pile [shape=box, label="Pile\n+1 EUR", style="filled", fillcolor="green"];
+  Face [shape=box, label="Face\n 0", style="filled", fillcolor="lightgrey"];
+
+  Lancer -> Pile;
+  Lancer -> Face; 
+}
