@@ -35,3 +35,9 @@ Options and Market Making presentation material.
 8. Les invariants de modeles (universalité martingale locale)
 8. Ouverture (arbitrage, surface de vol, american option, structured products etc.)
 
+## Ressources
+
+- https://blog.finxter.com/basics-of-option-pricing-in-python-the-black-scholes-model-2/
+- https://quant.stackexchange.com/questions/26240/how-to-derive-the-price-of-a-square-or-nothing-call-option
+- https://demonstrations.wolfram.com/PricingPowerOptionsInTheBlackScholesModel/
+- https://plotly.com/python/ipython-notebook-tutorial/
