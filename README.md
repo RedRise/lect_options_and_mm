@@ -41,3 +41,4 @@ Options and Market Making presentation material.
 - https://quant.stackexchange.com/questions/26240/how-to-derive-the-price-of-a-square-or-nothing-call-option
 - https://demonstrations.wolfram.com/PricingPowerOptionsInTheBlackScholesModel/
 - https://plotly.com/python/ipython-notebook-tutorial/
+- http://www.columbia.edu/~mh2078/FoundationsFE/BlackScholes.pdf
