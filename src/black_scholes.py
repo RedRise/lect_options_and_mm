@@ -1,4 +1,5 @@
 import numpy as np
+import src.payoffs as po
 from scipy.stats import norm
 
 
@@ -13,9 +14,12 @@ def d2(sigma, k, t, r, x):
 # Call option
 
 def call_price(sigma, k, t, r, x):
-    d1_val = d1(sigma, k, t, r, x)
-    d2_val = d2(sigma, k, t, r, x)
-    return norm.cdf(d1_val)*x-norm.cdf(d2_val)*k*np.exp(-r*t)
+    if t <= 0:
+        return po.call(x, k)
+    else:
+        d1_val = d1(sigma, k, t, r, x)
+        d2_val = d2(sigma, k, t, r, x)
+        return norm.cdf(d1_val)*x-norm.cdf(d2_val)*k*np.exp(-r*t)
 
 
 def call_delta(sigma, k, t, r, x):
@@ -37,9 +41,12 @@ def call_vega(sigma, k, t, r, x):
 
 
 def put_price(sigma, k, t, r, x):
-    d1_val = d1(sigma, k, t, r, x)
-    d2_val = d2(sigma, k, t, r, x)
-    return k*np.exp(-r*t)*norm.cdf(-d2_val) - norm.cdf(-d1_val)*x
+    if t <= 0:
+        return po.put(x, k)
+    else:
+        d1_val = d1(sigma, k, t, r, x)
+        d2_val = d2(sigma, k, t, r, x)
+        return k*np.exp(-r*t)*norm.cdf(-d2_val) - norm.cdf(-d1_val)*x
 
 
 def put_delta(sigma, k, t, r, x):

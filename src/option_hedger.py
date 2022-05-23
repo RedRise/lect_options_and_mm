@@ -10,23 +10,29 @@ nDelta = "Delta"
 nPrice = "Price"
 nValo = "RepliValo"
 nCash = "Cash"
-nNbTrades = "Trades"
+nNbTrades = "NbTrades"
 
 class OptionHedger:
 
+    # (price, time_left) -> delta
     fun_delta: Callable[[float, float], float]
+
     rebalance_thresh: Union[List[float], float]
-    _rebalance_fix_levels = bool = False
+    _rebalance_thresh_levels: bool = False
     limit_ask: float = 0
     limit_bid: float = float('inf')
     limit_time: float = -1
+
+    riskless_rate: float
+
     time_left: float
     price: float
-    riskless_rate: float
     delta: float = 0
     cash: float = 0
     option_price: float
-    just_traded: int = 0
+    nb_trades: int = 0
+
+    # first position set?
     _initialized: bool = False
 
     def __init__(self,
@@ -40,12 +46,12 @@ class OptionHedger:
         self.riskless_rate = riskless_rate
         if isinstance(rebalance_thresh, list):
             rebalance_thresh = [0, *sorted(rebalance_thresh), float('inf')]
-            self._rebalance_fix_levels = True
+            self._rebalance_thresh_levels = True
         self.rebalance_thresh = rebalance_thresh
         self.rebalance_time_window_max = rebalance_time_window_max
 
     def _update_rebalance_limits(self):
-        if not self._rebalance_fix_levels:
+        if not self._rebalance_thresh_levels:
             mult = np.exp(self.rebalance_thresh)
             self.limit_ask = self.price * mult
             self.limit_bid = self.price / mult
@@ -76,7 +82,7 @@ class OptionHedger:
         self.cash -= delta_trd * price
         self.delta = delta_tgt
 
-        self.just_traded += 1
+        self.nb_trades += 1
         self._update_rebalance_limits()
 
     def _init_porfolio(self, price: float, time_left: float):
@@ -96,16 +102,17 @@ class OptionHedger:
         if dt > 0:
             self.time_left = time_left
             self.cash *= np.exp(dt * self.riskless_rate)
-            self.just_traded = 0
+            self.nb_trades = 0
 
-        if (self.limit_ask <= price) and (0 <= way):
-            self._rebalance(self.limit_ask, time_left)
-            self.update(price, time_left, 1)
-        elif (price <= self.limit_bid) and (way <= 0):
-            self._rebalance(self.limit_bid, time_left)
-            self.update(price, time_left, -1)
-        elif (self.time_left <= self.limit_time):
-            self._rebalance(price, time_left)
+        if time_left > 0:
+            if (self.limit_ask <= price) and (0 <= way):
+                self._rebalance(self.limit_ask, time_left)
+                self.update(price, time_left, 1)
+            elif (price <= self.limit_bid) and (way <= 0):
+                self._rebalance(self.limit_bid, time_left)
+                self.update(price, time_left, -1)
+            elif (self.time_left <= self.limit_time):
+                self._rebalance(price, time_left)
 
         self.price = price
         self._update_state()
@@ -119,7 +126,7 @@ class OptionHedger:
             nLimAsk: self.limit_ask,
             nLimBid: self.limit_bid,
             nLimTime: self.limit_time,
-            nNbTrades: self.just_traded,
+            nNbTrades: self.nb_trades,
             nValo: self.valo,
         }
 
