@@ -1,10 +1,11 @@
-import plotly.offline as py
 import plotly.express as px
-import src.black_scholes as bs
 import numpy as np
 import pandas as pd
+import src.black_scholes as bs
 from src.paths import geom_brownian_path
-from src.option_hedger import *
+import src.option_hedger as oh
+import src.colnames as n
+
 
 T = 1
 K = 100
@@ -31,7 +32,7 @@ for  i in range(100):
     # path = [S0 for i in range(365)]
     # px.line(path).show()
 
-    states = replicate_call(SIGMA_IMPL, K, T, R, 0.5, 1*dt, path, dt, store=True)
+    states = oh.replicate_call(SIGMA_IMPL, K, T, R, 0.5, 1*dt, path, dt, store=True)
     # states = replicate_call(SIGMA, K, T, R, list(S0 * rebal_tresholds), 100*dt, path, dt, store=True)
 
     sdf = pd.DataFrame(states)

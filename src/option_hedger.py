@@ -1,16 +1,7 @@
 import numpy as np
 import src.black_scholes as bs
 from typing import Callable, Union, List
-
-nLimAsk = "LimAsk"
-nLimBid = "LimBid"
-nLimTime = "LimTime"
-nTtm = "Ttm"
-nDelta = "Delta"
-nPrice = "Price"
-nValo = "RepliValo"
-nCash = "Cash"
-nNbTrades = "NbTrades"
+import src.colnames as n
 
 class OptionHedger:
 
@@ -119,15 +110,15 @@ class OptionHedger:
 
     def to_dict(self):
         return {
-            nTtm: self.time_left,
-            nPrice: self.price,
-            nDelta: self.delta,
-            nCash: self.cash,
-            nLimAsk: self.limit_ask,
-            nLimBid: self.limit_bid,
-            nLimTime: self.limit_time,
-            nNbTrades: self.nb_trades,
-            nValo: self.valo,
+            n.Ttm: self.time_left,
+            n.Price: self.price,
+            n.Delta: self.delta,
+            n.Cash: self.cash,
+            n.LimAsk: self.limit_ask,
+            n.LimBid: self.limit_bid,
+            n.LimTime: self.limit_time,
+            n.NbTrades: self.nb_trades,
+            n.Valo: self.valo,
         }
 
 
@@ -154,8 +145,8 @@ def replicate_call(sigma, K, T, r, hedge_threshs, hedge_win, path, dt, store=Fal
         if store:
             states.append(hedger.to_dict())
 
-        if time_left <= 0:
-            break
+        # if time_left <= 0:
+        #     break
 
     if store:
         return states

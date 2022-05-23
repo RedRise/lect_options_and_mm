@@ -1,0 +1,22 @@
+Ttm = "Ttm"
+Option = "Option"
+OptionHedged = "OptionHedged"
+
+LimAsk = "LimAsk"
+LimBid = "LimBid"
+LimTime = "LimTime"
+Delta = "Delta"
+Gamma = "Gamma"
+Price = "Price"
+Valo = "Repli"
+Cash = "Cash"
+NbTrades = "NbTrades"
+
+Date = "Date"
+Open = "Open"
+High = "High"
+Low = "Low"
+
+Dlog = "Dlog"
+Hvol = "Hvol"
+Ivol = "Ivol"
