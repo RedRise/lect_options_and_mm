@@ -1,11 +1,30 @@
 digraph G {
-  
+
   rankdir=LR;
 
-  S_0 [label="S"];
-  S_up [shape=box, label="S . u", style="filled", fillcolor="green"];
-  S_down [shape=box, label = "S . d", style="filled", fillcolor="orange"];
+  node [shape="none"];
+  S0 [label=<S<sub>0</sub>>]
+  S1 [label=<S<sub>1</sub>?>]
 
-  S_0 -> S_up [label="p"];
-  S_0 -> S_down [label="q"]; 
+  T0 [label="t = 0"]
+  T1 [label="t = 1"]
+  
+  node [shape="box"];
+  S_0 [label=100];
+  S_up [shape=box, label=<S<sub>up</sub> = 120>, style="filled", fillcolor="green"];
+  S_down [shape=box, label = <S<sub>down</sub> = 90>, style="filled",  fillcolor="orange"];
+
+  T0 -> T1 [style="dashed"];
+  S0 -> S1;
+
+  S_0 -> S_up [label="50%"];
+  S_0 -> S_down [label="50%"]; 
+
+  edge[arrowhead=none, color=invis];
+  T0 -> S0;
+  T1 -> S1 -> S_up -> S_down;
+
+  {rank=same; S_up S_down T1 S1}
+  {rank=same; S_0 T0 S0}
+  
 }
