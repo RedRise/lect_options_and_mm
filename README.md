@@ -20,7 +20,12 @@ Sections are covered by jupyter notebooks.
 
 ## Install
 
+### Python envir
+
+```poetry install```
+
 ### Graphviz
 
 1. [Linux](https://www.graphviz.org/download/#linux)
 2. [Windows](https://www.graphviz.org/download/#windows)
+
