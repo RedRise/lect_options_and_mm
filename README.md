@@ -1,33 +1,60 @@
 # Options and Market Making (Lecture)
 
+
+## Try/Install
+
+### Try on hosted environments
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/01_intuition_of_pricing.ipynb) Jupyter
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/lab/01_intuition_of_pricing.ipynb) Jupyter Lab
+
+[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/RedRise/lect_options_and_mm)
+
+### Install locally
+
+1. Build Python environment ```poetry install```
+2. Install [Graphviz](https://www.graphviz.org/download)
+
+
+## Description
+
 Options Pricing and Market Making presentation material.
 
 Sections are covered by jupyter notebooks.
 
-* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/01_intuition_of_pricing.ipynb) Jupyter
-* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/lab/01_intuition_of_pricing.ipynb) Jupyter Lab
-
-
-## High level Index
-
 ### Intuition of pricing
+
+* Averaging, expectation, pricing and replication
+* Basic example of binomial 1-step model pricing
+* ```01_intuition_of_pricing.ipynb```
 
 ### No Model Pricing
 
+* Abscence of Arbitrage implication in pricing
+* No model dependent
+* Insight to pricing/probability duality
+* ```02_no_model_pricing.ipynb```
+
 ### Binomial Model
+
+* More detailed coverage of binomial model, 1-step and multistep
+* ```03_binomial_model.ipynb```
 
 ### Continuous Model
 
+* Introduction to continuous model
+* Definition of stochastic integration
+* Itô Lemma
+* Basic exemples of option pricing using FTAP
+* ```04_continuous_model.ipynb```
+
 ### Option hedging and Market Making
 
-## Install
-
-### Python envir
-
-```poetry install```
-
-### Graphviz
-
-1. [Linux](https://www.graphviz.org/download/#linux)
-2. [Windows](https://www.graphviz.org/download/#windows)
+* Concrete overview of Call option pricing and greeks
+* Replication portfolio example, and link to pricing
+* Real life (not simulated) call replication
+* Explanation of tracking error
+* Link to market making
+* ```05_call_option_mm.ipynb```
 

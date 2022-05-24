@@ -1,0 +1,5 @@
+# Commands to start on workspace startup
+tasks:
+  - name: Setup Installation
+    before: 
+  - init: pip install poetry && poetry
