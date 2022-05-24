@@ -2,10 +2,10 @@ digraph G {
   
   rankdir=LR;
 
-  S_0;
-  Pile [shape=box, label="Pile\n+1 EUR", style="filled", fillcolor="green"];
-  Face [shape=box, label="Face\n 0", style="filled", fillcolor="lightgrey"];
+  S_0 [label="S"];
+  S_up [shape=box, label="S . u", style="filled", fillcolor="green"];
+  S_down [shape=box, label = "S . d", style="filled", fillcolor="orange"];
 
-  Lancer -> Pile [label="50%"];
-  Lancer -> Face [label="50%"]; 
+  S_0 -> S_up [label="p"];
+  S_0 -> S_down [label="q"]; 
 }

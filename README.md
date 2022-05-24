@@ -42,5 +42,7 @@ Options and Market Making presentation material.
 - https://demonstrations.wolfram.com/PricingPowerOptionsInTheBlackScholesModel/
 - https://plotly.com/python/ipython-notebook-tutorial/
 - http://www.columbia.edu/~mh2078/FoundationsFE/BlackScholes.pdf
+- https://www.blog.pythonlibrary.org/2018/09/25/creating-presentations-with-jupyter-notebook/
+- https://rise.readthedocs.io/en/stable/usage.html
 
 ## Next things to add

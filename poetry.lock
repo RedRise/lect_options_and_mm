@@ -1056,6 +1056,17 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
+name = "rise"
+version = "5.7.1"
+description = "Reveal.js - Jupyter/IPython Slideshow Extension"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
+
+[package.dependencies]
+notebook = ">=6.0"
+
+[[package]]
 name = "scipy"
 version = "1.8.1"
 description = "SciPy: Scientific Library for Python"
@@ -1252,7 +1263,7 @@ notebook = ">=4.4.1"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<3.11"
-content-hash = "5510e964a5600bedb968ec205cd80513a95fd4fba15dabf8723cfa8b7eefbe51"
+content-hash = "5f18f564ec36aea4becb7c4486ab816a8cc46f980511751b2db18682139ffd86"
 
 [metadata.files]
 anyio = [
@@ -1845,6 +1856,10 @@ qtpy = [
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
     {file = "requests-2.27.1.tar.gz", hash = "sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"},
+]
+rise = [
+    {file = "rise-5.7.1-py2.py3-none-any.whl", hash = "sha256:df8ce9f0e575d334b27ff40a1f91a4c78d9f7b4995858bb81185ceeaf98eae3a"},
+    {file = "rise-5.7.1.tar.gz", hash = "sha256:641db777cb907bf5e6dc053098d7fd213813fa9a946542e52b900eb7095289a6"},
 ]
 scipy = [
     {file = "scipy-1.8.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:65b77f20202599c51eb2771d11a6b899b97989159b7975e9b5259594f1d35ef4"},
