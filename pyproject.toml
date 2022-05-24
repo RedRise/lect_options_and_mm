@@ -5,7 +5,7 @@ description = "Options and Market Making presentation material"
 authors = ["Guillaume Garchery <polluxxx@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.11"
+python = ">=3.8,<3.11"
 jupyter = "^1.0.0"
 jupyterlab = "^3.4.2"
 numpy = "^1.22.3"

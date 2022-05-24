@@ -1,9 +1,8 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - before: |
-      pyenv install 3.10.0
-      pyenv local 3.10.0
       curl -sSL https://install.python-poetry.org | python3 -
+      poetry config virtualenvs.create false
     init: | 
       poetry install
       poetry run jupyter contrib nbextension install --user
