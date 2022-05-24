@@ -4,3 +4,5 @@ plotly
 scipy
 pandas
 pytest
+jupyter_contrib_nbextensions
+jupyter_nbextensions_configurator

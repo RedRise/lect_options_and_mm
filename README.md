@@ -4,7 +4,9 @@ Options Pricing and Market Making presentation material.
 
 Sections are covered by jupyter notebooks.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD)
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/01_intuition_of_pricing.ipynb) Jupyter
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/lab/01_intuition_of_pricing.ipynb) Jupyter Lab
+
 
 ## High level Index
 
