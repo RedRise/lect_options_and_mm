@@ -4,6 +4,8 @@ Options Pricing and Market Making presentation material.
 
 Sections are covered by jupyter notebooks.
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD)
+
 ## High level Index
 
 ### Intuition of pricing
