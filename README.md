@@ -5,7 +5,7 @@
 ## Try on hosted environments
 
 [![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/RedRise/lect_options_and_mm) 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD?urlpath=/tree/01_intuition_of_pricing.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedRise/lect_options_and_mm/HEAD)
 
 
 ## Install locally
