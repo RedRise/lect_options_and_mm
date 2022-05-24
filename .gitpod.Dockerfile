@@ -1,4 +1,4 @@
 FROM gitpod/workspace-full
-
-RUN sudo install-packages \
-          graphviz \
+USER gitpod
+RUN sudo apt-get update -q && \
+    sudo apt-get install -yq graphviz
