@@ -15,6 +15,8 @@ scipy = "^1.8.1"
 pandas = "^1.4.2"
 pytest = "^7.1.2"
 rise = "^5.7.1"
+jupyter-contrib-nbextensions = "^0.5.1"
+jupyter_nbextensions_configurator = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"

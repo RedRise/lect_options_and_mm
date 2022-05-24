@@ -1,0 +1,18 @@
+digraph G {
+
+  rankdir=LR;
+
+  node [shape="box"];
+  S_0 [label=100];
+  S_up [shape=box, label=<S<sub>up</sub> = 120>, style="filled", fillcolor="green"];
+  S_down [shape=box, label = <S<sub>down</sub> = 90>, style="filled",  fillcolor="orange"];
+
+  S_0 -> S_up [label=<1/3 <s>50%</s>>];
+  S_0 -> S_down [label=<2/3 <s>50%</s>>]; 
+
+  edge[arrowhead=none, color=invis];
+
+  {rank=same; S_up S_down}
+  {rank=same; S_0}
+  
+}
