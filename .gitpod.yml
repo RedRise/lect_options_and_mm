@@ -10,7 +10,7 @@ tasks:
       poetry run jupyter contrib nbextension install --user
       poetry run jupyter nbextension enable --py widgetsnbextension
       poetry run jupyter nbextensions_configurator enable --user
-    command: poetry run jupyter lab --NotebookApp.allow_origin="*"
+    command: poetry run jupyter lab
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
