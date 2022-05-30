@@ -1,7 +1,9 @@
 import numpy as np
+import pandas as pd
 import src.black_scholes as bs
 from typing import Callable, Union, List
 import src.colnames as n
+
 
 class OptionHedger:
 
@@ -53,8 +55,10 @@ class OptionHedger:
                     break
 
             # avoir price at thresholds
-            self.limit_bid = threshs[i - 2] if self.price == threshs[i-1] else threshs[i-1]
-            self.limit_ask = threshs[i + 1] if self.price == threshs[i] else threshs[i]
+            self.limit_bid = threshs[i -
+                                     2] if self.price == threshs[i-1] else threshs[i-1]
+            self.limit_ask = threshs[i +
+                                     1] if self.price == threshs[i] else threshs[i]
 
         if self.rebalance_time_window_max:
             self.limit_time = self.time_left - self.rebalance_time_window_max
@@ -124,22 +128,26 @@ class OptionHedger:
 
 def replicate_call(sigma, K, T, r, hedge_threshs, hedge_win, path, dt, store=False):
 
+    if isinstance(dt, (list, pd.core.series.Series, np.ndarray)):
+        if len(dt) != len(path):
+            print("Please provide dt with same length than path (or single value).")
+            exit()
+        else:
+            dt = np.full(fill_value=dt, shape=len(path))
+
     states = []
 
-    def call_delta_wrap(price, ttm):
-        return bs.call_delta(sigma, K, ttm, r, price)
-
     hedger = OptionHedger(
-        call_delta_wrap,
+        bs.call_delta_wrapper(sigma, K, r),
         T,
         r,
         hedge_threshs,
         hedge_win
     )
 
-    time_left = T - dt
-    for price in path:
-        time_left = max(time_left - dt, 0.0)
+    time_left = T - dt[0]
+    for price, time_step in zip(path, dt):
+        time_left = max(time_left - time_step, 0.0)
 
         hedger.update(price, time_left)
         if store:
@@ -152,4 +160,3 @@ def replicate_call(sigma, K, T, r, hedge_threshs, hedge_win, path, dt, store=Fal
         return states
     else:
         return hedger.to_dict()
-

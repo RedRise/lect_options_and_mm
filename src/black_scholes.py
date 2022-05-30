@@ -26,6 +26,14 @@ def call_delta(sigma, k, t, r, x):
     return norm.cdf(d1(sigma, k, t, r, x))
 
 
+def call_delta_wrapper(sigma, K, r):
+
+    def call_delta_wrap(price, ttm):
+        return call_delta(sigma, K, ttm, r, price)
+
+    return call_delta_wrap
+
+
 def call_gamma(sigma, k, t, r, x):
     numer = x * sigma * np.sqrt(t * 2 * np.pi)
     d1_val = d1(sigma, k, t, r, x)

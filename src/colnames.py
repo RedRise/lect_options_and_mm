@@ -20,3 +20,8 @@ Low = "Low"
 Dlog = "Dlog"
 Hvol = "Hvol"
 Ivol = "Ivol"
+
+TxHash = "TxHash"
+Block = "Block"
+BlockTime = "BlockTime"
+Spot = "Spot"
