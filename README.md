@@ -10,8 +10,9 @@
 
 ## Install locally
 
-1. Build Python environment ```poetry install```
-2. Install [Graphviz](https://www.graphviz.org/download)
+1. Build Python environment ```poetry install```.
+2. Install [Graphviz](https://www.graphviz.org/download).
+3. For a better jupyter experience, run commands in ```binder/postBuild``` file.
 
 ---
 

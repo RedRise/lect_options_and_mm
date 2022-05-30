@@ -132,8 +132,8 @@ def replicate_call(sigma, K, T, r, hedge_threshs, hedge_win, path, dt, store=Fal
         if len(dt) != len(path):
             print("Please provide dt with same length than path (or single value).")
             exit()
-        else:
-            dt = np.full(fill_value=dt, shape=len(path))
+    else:
+        dt = np.full(fill_value=dt, shape=len(path))
 
     states = []
 

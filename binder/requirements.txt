@@ -1,8 +1,9 @@
+pytest
+scipy
 numpy
+pandas
 graphviz
 plotly
-scipy
-pandas
-pytest
+matplotlib
 jupyter_contrib_nbextensions
 jupyter_nbextensions_configurator
