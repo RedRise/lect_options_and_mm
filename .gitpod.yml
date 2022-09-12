@@ -5,7 +5,8 @@ tasks:
   - before: |
       curl -sSL https://install.python-poetry.org | python3 -
       poetry config virtualenvs.create false
-    init: | 
+      printf 'export PATH="/home/gitpod/.local/bin:$PATH"' >> $HOME/.bashrc
+    init: |
       poetry install
       poetry run jupyter contrib nbextension install --user
       poetry run jupyter nbextension enable --py widgetsnbextension
@@ -22,4 +23,3 @@ vscode:
     - yzhang.markdown-all-in-one
     - darkriszty.markdown-table-prettify
     - joaompinto.vscode-graphviz
-  
