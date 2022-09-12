@@ -4,7 +4,8 @@ image:
 tasks:
   - before: |
       curl -sSL https://install.python-poetry.org | python3 -
-      printf 'export PATH="/home/gitpod/.local/bin:$PATH"' >> $HOME/.bashrc && exit
+      printf 'export PATH="$PATH:/home/gitpod/.local/bin"' >> $HOME/.bashrc
+      source $HOME/.bashrc
       poetry config virtualenvs.create false
     init: |
       poetry install
@@ -22,4 +23,4 @@ vscode:
     - ms-python.python
     - yzhang.markdown-all-in-one
     - darkriszty.markdown-table-prettify
-    - tintinweb/vscode-interactive-graphviz 
+    # - tintinweb/vscode-interactive-graphviz
