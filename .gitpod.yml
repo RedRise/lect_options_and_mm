@@ -23,4 +23,5 @@ vscode:
     - ms-python.python
     - yzhang.markdown-all-in-one
     - darkriszty.markdown-table-prettify
-    # - tintinweb/vscode-interactive-graphviz
+    - danielgjackson.auto-dark-mode-windows
+    - tintinweb/vscode-interactive-graphviz
