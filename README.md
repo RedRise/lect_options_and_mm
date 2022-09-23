@@ -10,7 +10,7 @@
 ## Local Use
 
 1. Install [Graphviz](https://www.graphviz.org/download).
-2. Run ```. ./install/install.sh```.
+2. Run ```. ./install/install.sh```. It will basically install [poetry](https://python-poetry.org/docs/#installation), and setup the environment.
 
 ## Local Run
 
@@ -59,10 +59,18 @@ Sections are covered by jupyter notebooks.
 - Link to market making
 - ```05_call_option_mm.ipynb```
 
-## About Diaporama notebook
+---
+
+## About Jupyter & Diaporama
+
+### Update a notebook to Diaporame mode
 
 1. Go to raw edition mode for notebook
 2. Go to the ```metadata``` attribute (at the bottom)
 3. It should contains :
    1. >"celltoolbar": "Diaporama"
    2. >"hide_input": false
+
+### Access slide options for cells
+
+- Go to : edit / cell / slideshow
